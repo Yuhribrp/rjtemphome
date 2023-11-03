@@ -47,6 +47,11 @@ gem "rotp"
 # Use rqrcode for creating and rendering QR codes into various formats [https://github.com/whomwah/rqrcode]
 gem "rqrcode"
 
+# Style
+gem 'sassc-rails'
+gem 'bootstrap', '~> 5.3.2'
+
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
