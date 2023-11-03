@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_03_004243) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_03_004434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,20 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_03_004243) do
     t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "property_addresses", force: :cascade do |t|
+    t.string "zip_code"
+    t.string "country"
+    t.string "state"
+    t.string "city"
+    t.string "neighborhood"
+    t.string "street"
+    t.string "complement"
+    t.bigint "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_property_addresses_on_property_id"
   end
 
   create_table "recovery_codes", force: :cascade do |t|
@@ -70,6 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_03_004243) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "property_addresses", "properties"
   add_foreign_key "recovery_codes", "users"
   add_foreign_key "sessions", "users"
   add_foreign_key "user_addresses", "users"
