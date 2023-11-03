@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_02_223738) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_03_002559) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_02_223738) do
     t.string "otp_secret", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "document"
+    t.integer "age"
+    t.date "birth_date"
+    t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
