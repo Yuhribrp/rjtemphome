@@ -50,6 +50,7 @@ gem "rqrcode"
 # Style
 gem 'sassc-rails'
 gem 'bootstrap', '~> 5.3.2'
+gem "font-awesome-sass", "~> 6.1"
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
